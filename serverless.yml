@@ -1,5 +1,5 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
-org: cogosoft
+org: apipos
 service: pos-system
 
 provider:
@@ -24,4 +24,3 @@ package:
 
 plugins:
   - serverless-offline
-
