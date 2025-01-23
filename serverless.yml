@@ -1,0 +1,27 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: cogosoft
+service: pos-system
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  list:
+    handler: src/handler/products/handler.list
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+    - .serverless/**
+    - .env.local
+    - .env.dev
+
+plugins:
+  - serverless-offline
+
